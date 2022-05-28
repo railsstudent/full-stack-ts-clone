@@ -69,7 +69,7 @@ export type UserStats = {
 export type GetCurrentUserQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetCurrentUserQuery = { __typename?: 'Query', currentUser: { __typename?: 'User', id: string, name: string, handle: string, avatarUrl: string, createdAt: string }, suggestions: Array<{ __typename?: 'Suggestion', name: string, handle: string, avatarUrl: string, reason: string }> };
+export type GetCurrentUserQuery = { __typename?: 'Query', currentUser: { __typename?: 'User', id: string, name: string, handle: string, avatarUrl: string, createdAt: string, stats?: { __typename?: 'UserStats', tweetCount: number, followingCount: number, followerCount: number } | null }, suggestions: Array<{ __typename?: 'Suggestion', name: string, handle: string, avatarUrl: string, reason: string }> };
 
 
 export const GetCurrentUserDocument = gql`
@@ -80,6 +80,11 @@ export const GetCurrentUserDocument = gql`
     handle
     avatarUrl
     createdAt
+    stats {
+      tweetCount
+      followingCount
+      followerCount
+    }
   }
   suggestions {
     name

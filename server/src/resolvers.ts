@@ -1,6 +1,8 @@
 import Db, { DbTweet, DbUser } from "./db"
 import { Resolvers } from "./resolvers-types.generated"
-import queryTwitterResolvers from "./resolvers/Query"
+import queryTwitterResolver from "./resolvers/Query"
+import userTwitterResolver from "./resolvers/User"
+import tweetTwitterResolver from "./resolvers/Tweet"
 
 export interface TwitterResolverContext {
     db: Db,
@@ -10,7 +12,9 @@ export interface TwitterResolverContext {
 }
 
 const resolvers: Resolvers<TwitterResolverContext> = {
-    Query: queryTwitterResolvers,
+    Query: queryTwitterResolver,
+    Tweet: tweetTwitterResolver,
+    User: userTwitterResolver,
 }
 
 export default resolvers;
