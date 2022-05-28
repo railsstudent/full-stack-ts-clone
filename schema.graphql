@@ -4,6 +4,10 @@ type Query {
   tweets: [Tweet!]!
 }
 
+type Mutation {
+  createTweet(userId: String!, body: String!): Tweet!
+}
+
 type User {
   id: String!
   name: String!
