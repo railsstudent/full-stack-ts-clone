@@ -32,6 +32,21 @@ export const GET_CURRENT_USER = gql`
       avatarUrl
       reason
     }
+    trends {
+      ... on TopicTrend {
+        tweetCount
+        topic
+        quote {
+          title
+          imageUrl
+          description
+        }
+      }
+      ... on HashtagTrend {
+        tweetCount
+        hashtag
+      }
+    }
   }
 `
 
