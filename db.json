@@ -34,6 +34,20 @@
       "createdAt": "2022-03-23T03:55:59.614Z",
       "updatedAt": "2022-03-23T03:55:59.614Z",
       "id": "tweet-1220baa2-2092-4ed8-a72c-91757dc508f7"
+    },
+    {
+      "message": "testing 123123123123",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-05-28T16:32:35.462Z",
+      "updatedAt": "2022-05-28T16:32:35.462Z",
+      "id": "tweet-fb91f223-02e9-4435-9c02-cedaad8701ed"
+    },
+    {
+      "message": "sewrewrewr",
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "createdAt": "2022-05-28T16:32:39.232Z",
+      "updatedAt": "2022-05-28T16:32:39.232Z",
+      "id": "tweet-92239aa3-43ef-43b3-b5da-1375be7aac3f"
     }
   ],
   "users": [
@@ -146,6 +160,13 @@
       "createdAt": "2022-03-23T03:55:59.617Z",
       "updatedAt": "2022-03-23T03:55:59.617Z",
       "id": "favorite-a4e781ad-1c7b-4e62-b9dd-66b4e36e390b"
+    },
+    {
+      "userId": "user-15a37948-7712-4e0b-a554-2fef33f31697",
+      "tweetId": "tweet-92239aa3-43ef-43b3-b5da-1375be7aac3f",
+      "createdAt": "2022-05-29T10:03:15.882Z",
+      "updatedAt": "2022-05-29T10:03:15.882Z",
+      "id": "favorite-68c35c32-f686-4d12-8616-3f5635e91514"
     }
   ],
   "hashtagTrends": [
