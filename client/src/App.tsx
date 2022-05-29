@@ -50,27 +50,18 @@ export const GET_CURRENT_USER = gql`
   }
 `
 
-const TRENDS = [
-  {
-    topic: 'Frontend Masters',
-    tweetCount: 12345,
-    title: 'Frontend Masters',
-    description: 'Launch of new full stack TS course',
-    imageUrl: 'http://localhost:3000/static/fem_logo.png',
-  },
-];
-
 const App: React.FC = () => {
   const { loading, error, data } = useGetCurrentUserQuery()
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error}</p>
   if (!data) return <p>No data.</p>
-  const { currentUser, suggestions = [] } = data
+  const { currentUser, suggestions = [], trends = [] } = data
 
   const { favorites: rawFavorites } = currentUser;
   const favorites = (rawFavorites || [])
     .map((f) => f.tweet?.id)
     .filter(isDefined);
+  const filteredTrends = trends.filter(isDefined)
 
   return (
     <div>
@@ -82,7 +73,7 @@ const App: React.FC = () => {
           currentUserId={currentUser.id}
           currentUserFavorites={favorites}
         />
-        <RightBar trends={TRENDS} suggestions={suggestions} />
+        <RightBar trends={filteredTrends} suggestions={suggestions} />
       </div>
     </div>
   );

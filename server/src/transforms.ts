@@ -1,5 +1,5 @@
-import { Favorite, Tweet } from "./resolvers-types.generated"
-import { DbFavorite, DbTweet } from "./db"
+import { Favorite, Trend, Tweet } from "./resolvers-types.generated"
+import { DbFavorite, DbTweet, DbTrend } from "./db"
 
 export const tweetTransform = (
   t: DbTweet
@@ -19,5 +19,16 @@ export const favoriteTransform = (
     id: t.id,
     createdAt: t.createdAt,
     updatedAt: t.updatedAt,
+  }
+}
+
+export const trendTransform = (t: DbTrend): Trend => {
+  const { tweetCount } = t
+  if (t.kind === "topic") {
+    const { topic, quote } = t
+    return { tweetCount, topic, quote }
+  } else {
+    const { hashtag } = t
+    return { tweetCount, hashtag }
   }
 }
